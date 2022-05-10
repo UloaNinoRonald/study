@@ -5,22 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        img {
+            height: 100px;
+        }
+        div {
+            height: 280px;
+            border: 1px solid red;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 5px;
+        }
+
+    </style>
 </head>
 <body>
+    <section id="box">
+        <!-- <div>
+            <img src="images/1.jpg" alt="">
+            <img src="images/2.jpg" alt="">
+            <img src="images/3.jpg" alt="">
+            <img src="images/4.jpg" alt="">
+        </div>
+        <div>
+            <img src="images/1.jpg" alt="">
+            <img src="images/2.jpg" alt="">
+            <img src="images/3.jpg" alt="">
+            <img src="images/4.jpg" alt="">
+        </div> -->
+    </section>
     <script>
-        // Тернарный оператор
-        let age = prompt("Укажите возраст:", 18);
+        let n = +prompt("сколько блоков");
+        let p = +prompt("сколько картинок");
+        let s = "";
+        if(p >= 1 && p <=11) {
 
-        // let access = (age >=18) ? "доступ разрешен" : 'доступ запрещён';
+            for(i = 1; i <= n; i++) {
+                s += "<div>";
 
-        if(age >= 18) 
-            access = "доступ разрешен";
-           
-         else 
-            access = "доступ запрещён";
-            alert(access);
-        
-       
+                    for(j = 1; j <= p;j++){
+                        s += `<img src="images/${j}.jpg">`;
+                    }
+
+                s += "</div>";
+
+            }
+            box.innerHTML = s;
+
+        }else {
+            alert("Неверное количество блоков");
+        }
     </script>
     
 </body>
